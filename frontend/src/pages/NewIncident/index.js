@@ -21,6 +21,7 @@ export default function NewIncident() {
             title,
             description,
             value,
+            a
         }
 
         console.log(ongId);
