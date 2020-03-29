@@ -14,26 +14,25 @@ export default function NewIncident() {
     const ongId = localStorage.getItem('OngId');
     const history = useHistory();
 
-    async function handleNewIncident(e){
+    async function handleNewIncident(e) {
         e.preventDefault();
 
-        const data ={
+        const data = {
             title,
             description,
             value,
-            a
         }
 
         console.log(ongId);
 
 
-        
-        try{
-            await api.post('Incidents',data, {headers: {Authorization: ongId }});
+
+        try {
+            await api.post('Incidents', data, { headers: { Authorization: ongId } });
             history.push('/profile');
 
         }
-        catch(err){
+        catch (err) {
             alert('Erro ao cadastrar caso, tente novamente.');
         }
 
@@ -56,7 +55,7 @@ export default function NewIncident() {
                     </Link>
                 </section>
 
-                <form onSubmit ={handleNewIncident}>
+                <form onSubmit={handleNewIncident}>
                     <input
                         placeholder="Titulo do caso"
                         value={title}
